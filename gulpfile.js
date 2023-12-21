@@ -39,7 +39,7 @@ if (argv.ci) {
 
 	webpackConfig.mode = 'production';
 } else {
-	webpackConfig.mode = webpackConfig.mode || 'development';
+	webpackConfig.mode = webpackConfig.mode || 'production';
 }
 
 let $ = gulpLoadPlugins({
