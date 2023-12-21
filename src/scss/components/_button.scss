@@ -1,10 +1,33 @@
 .button {
-	position: relative;
 	display: inline-block;
+	padding: 16px;
+	background-color: $color-black;
+	border: none;
+	border-radius: 12px;
+	font-size: 16px;
+	line-height: 1;
+	font-weight: 600;
+	color: $color-white;
 	text-align: center;
 	white-space: nowrap;
-	transition: color $transition-default, background-color $transition-default;
+	user-select: none;
+	transition: color $transition-default, opacity $transition-default;
+
+	@include tablet {
+		padding: 22px;
+		border-radius: 16px;
+	}
+
+	@include desktop-xl {
+		padding: 24px;
+	}
 
 	&:hover {
+		color: rgba($color-white, .6);
+	}
+
+	&:disabled {
+		opacity: .6;
+		pointer-events: none;
 	}
 }

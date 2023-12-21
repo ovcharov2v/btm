@@ -1,0 +1,57 @@
+.list {
+	&__elem {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		padding-left: 24px;
+		font-size: 14px;
+		line-height: 1.4;
+
+		&:not(:last-child) {
+			margin-bottom: 9px;
+		}
+
+		@include desktop-xl {
+			padding-left: 26px;
+			font-size: 16px;
+
+			&:not(:last-child) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		color: #28906F;
+	}
+
+	&__banks {
+		margin-top: -2px;
+		margin-left: 4px;
+
+		@include desktop-xl {
+			margin-top: 0;
+			margin-left: 6px;
+		}
+	}
+
+	&__text-short {
+		display: none;
+
+		@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop-xl) {
+			display: inline-block;
+		}
+	}
+
+	&__text-long {
+		@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop-xl) {
+			display: none;
+		}
+	}
+}

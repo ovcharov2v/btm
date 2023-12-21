@@ -1,0 +1,39 @@
+[data-tippy-root] {
+	max-width: 302px;
+}
+
+.tippy-box[data-theme~=custom] {
+	position: relative;
+	padding: 4px 0;
+	background-color: $color-black;
+	border-radius: 10px;
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 500;
+	color: $color-white;
+	transform: translateX(11px);
+}
+
+.tippy-arrow {
+	left: unset !important;
+	right: 14px;
+	width: 14px;
+	height: 14px;
+	border-radius: 2px;
+	background-color: $color-black;
+	transform: translateY(-50%) translateY(1px) rotate(45deg) !important;
+
+	&::before {
+		content: none;
+	}
+}
+
+.tippy-box[data-theme~=custom][data-placement^='top-end'] > .tippy-arrow {
+	bottom: 0;
+	transform: translateY(50%) translateY(-1px) rotate(45deg) !important;
+}
+
+.tippy-box[data-theme~=custom][data-placement^='bottom-end'] > .tippy-arrow:before {
+	top: 0;
+	transform: translateY(-50%) rotate(45deg) !important;
+}

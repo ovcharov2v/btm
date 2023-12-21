@@ -4,7 +4,124 @@ prepend vars
 	//-
 
 append vars
-	- title = "Main page"
+	- title = "Тарифы"
+	- meta.description = "Тарифы"
 
 block content
-	h1 Craft
+	// Section Tariffs
+	section.section-tariffs.container
+		p.section-tariffs__text Выберите лучший
+		h2.h2.section-tariffs__title Актуальные тарифы
+		.section-tariffs__grid
+			// Tariff
+			article.tariff.section-tariffs__item.section-tariffs__item--consultation
+				.tariff__title-box
+					.tariff__icon-box
+						+svg("dialogs")(class="tariff__icon", aria-label="Иконка тарифа Консультация")
+					h3.tariff__title Консультация
+					p.tariff__description Основные вопросы и направления
+				.tariff__action-box
+					.tariff__price-box
+						h4.tariff__price Бесплатно
+						p.tariff__period В любое время
+						button.button.tariff__action-btn Выбрать
+				.tariff__list-box
+					ul.list
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|В любое удобное время
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Расскажем о всех нюансах процедуры
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Предложим варианты решения вашей проблемы
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Подготовим рекомендации
+			// Tariff
+			article.tariff.tariff--gold.section-tariffs__item.section-tariffs__item--base
+				p.tariff__label Лучший тариф
+				.tariff__title-box
+					.tariff__icon-box
+						+svg("flash")(class="tariff__icon")
+					h3.tariff__title Базовый тариф
+					p.tariff__description От любого банка без процентов и переплат
+				.tariff__action-box
+					.tariff__price-box
+						h4.tariff__price 65 000 ₽
+						p.tariff__period Единоразовый платеж
+						button.button.tariff__action-btn Выбрать
+					.tariff__banner.banner.banner--gold
+						img.banner__card(src="images/banner-card-gold.svg", alt="Погашено")
+						img.banner__text(src="images/banner-text.svg", alt="Гарантия списания")
+						button.tooltip.banner__tooltip(data-tippy-content="Для Вашего спокойствия мы гарантируем возврат оплаты в случае отсутствия списания долгов после процедуры")
+							+svg("question")(class="tooltip__icon", aria-label="Подсказка")
+				.tariff__list-box
+					ul.list
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Сбор всех необходимых документов
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Сбор всех необходимых документов
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Взаимодействие с финансовым управляющим
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Контроль процедуры реализац. имущества
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Поддержка и сопровождение клиента на всех этапах банкротства
+			// Tariff
+			article.tariff.section-tariffs__item.section-tariffs__item--credit
+				.tariff__title-box
+					.timer.tariff__timer(aria-label="До конца акции осталось")
+						+svg("clock")(class="timer__icon")
+						span.timer__time 00:00:00
+					.tariff__icon-box
+						+svg("percent")(class="tariff__icon")
+					h3.tariff__title Рассрочка
+					p.tariff__description От любого банка без процентов и переплат
+				.tariff__action-box
+					.tariff__price-box
+						.timer.tariff__timer.tariff__timer--tablet(aria-label="До конца акции осталось")
+							+svg("clock")(class="timer__icon")
+							span.timer__time 00:00:00
+						h4.tariff__price 3880 ₽ / мес.
+						p.tariff__period На 24 месяца
+						button.button.tariff__action-btn Выбрать
+					.tariff__banner.banner.banner--blue
+						img.banner__card(src="images/banner-card-blue.svg", alt="Погашено")
+						img.banner__text(src="images/banner-text.svg", alt="Гарантия списания")
+						button.tooltip.banner__tooltip(data-tippy-content="Для Вашего спокойствия мы гарантируем возврат оплаты в случае отсутствия списания долгов после процедуры")
+							+svg("question")(class="tooltip__icon", aria-label="Подсказка")
+				.tariff__list-box
+					ul.list
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							span.list__text-long Удобные варианты рассрочки
+							span.list__text-short Варианты рассрочки
+							// Banks list
+							ul.bank-list.list__banks
+								li.bank-list__elem
+									+picture("bank-logo1", "Название банка 1")(class="bank-list__logo")
+								li.bank-list__elem
+									+picture("bank-logo2", "Название банка 2")(class="bank-list__logo")
+								li.bank-list__elem
+									+picture("bank-logo3", "Название банка 3")(class="bank-list__logo")
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Комфортные условия оплаты
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Фиксированная сумма
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Гарантия возврата средств
+						li.list__elem
+							+svg("confirm")(class="list__icon", aria-label="Включено в тариф")
+							|Остальное, что и в базовом тарифе
+
+

@@ -1,0 +1,87 @@
+.banner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 52px;
+	padding: 10px 16px;
+	border-radius: 12px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	user-select: none;
+	background-size: 128% auto, auto;
+	background-position: 40% 63%, center;
+
+	@include tablet {
+		height: 72px;
+		border-radius: 16px;
+		background-position: -4% 63%, center;
+	}
+
+	&--blue {
+		background-image: url("../images/banner-blue-bg.svg"), linear-gradient(#2557F6, #2557F6);
+	}
+
+	&--gold {
+		background-image: url("../images/banner-gold-bg.svg"), linear-gradient(180deg, #E0B330 0%, #FBEE88 51.1%, #E0B330 100%);
+	}
+
+	&__card {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		max-width: 300px;
+		transform: translate(-32%, -39%);
+
+		@include tablet {
+			transform: translate(-41%, -31%);
+			width: 92%;
+			max-width: unset;
+		}
+
+		@include desktop {
+			transform: translate(-41%, -31%);
+			width: 92%;
+		}
+
+		@include desktop-xl {
+			transform: translate(-32%, -39%);
+			width: 100%;
+		}
+	}
+
+	&__text {
+		height: 30px;
+		margin-right: 20px;
+
+		@include tablet {
+			height: 34px;
+			transform: translateY(-1px);
+			margin-right: 30px;
+		}
+
+		@include desktop {
+			height: 34px;
+			transform: translateY(-3px);
+			margin-right: 30px;
+		}
+
+		@include desktop-xl {
+			 height: auto;
+			 transform: none;
+			 margin-right: 42px;
+		 }
+	}
+
+	&__tooltip {
+		color: rgba($color-white, .6);
+		transition: color $transition-default;
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+		}
+	}
+}

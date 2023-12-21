@@ -1,0 +1,372 @@
+.tariff {
+	position: relative;
+	z-index: 0;
+	background-color: $color-white;
+	padding: 24px;
+	border-radius: 20px;
+
+	@include tablet {
+		padding: 12px 12px 12px 24px;
+		border-radius: 24px;
+	}
+
+	@include tablet-only {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: minmax(164px, min-content);
+		grid-gap: 8px 40px;
+		grid-template-areas: "title action" "list action";
+	}
+
+	@include desktop {
+		grid-template: auto / 100%;
+		padding: 24px 12px;
+	}
+
+	@include desktop-xl {
+		padding: 32px 12px 24px;
+	}
+
+	&--gold {
+		&::before {
+			position: absolute;
+			z-index: -2;
+			top: -3px;
+			left: -3px;
+			right: -3px;
+			bottom: -3px;
+			border-radius: 23px;
+			background: linear-gradient(180deg, #E0B330 0%, #FBEE88 51.1%, #E0B330 100%);
+			content: "";
+		}
+
+		&::after {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #fff;
+			border-radius: 20px;
+			content: "";
+		}
+
+		@include tablet {
+			&::before {
+				top: -4px;
+				left: -4px;
+				right: -4px;
+				bottom: -4px;
+				border-radius: 28px;
+			}
+
+			&::after {
+				border-radius: 24px;
+			}
+		}
+	}
+
+	&__title-box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-bottom: 16px;
+
+		@include tablet {
+			margin-bottom: 20px;
+		}
+
+		@include tablet-only {
+			grid-area: title;
+			align-items: flex-start;
+			margin-bottom: 12px;
+			padding-top: 12px;
+			text-align: left;
+		}
+
+		@include desktop {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__icon-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 64px;
+		height: 64px;
+		margin-bottom: 16px;
+		border-radius: 50%;
+		background-image: linear-gradient(to bottom, #F3F7FB 0%, rgba(#F3F7FB, 0) 100%);
+		background-origin: border-box;
+		box-shadow: inset 0 100vw $color-white;
+		border: 8px solid transparent;
+		color: $color-black;
+
+		@include tablet {
+			margin-bottom: 20px;
+		}
+
+		@include desktop {
+			width: 72px;
+			height: 72px;
+			margin-bottom: 16px;
+		}
+
+		@include desktop-xl {
+			width: 80px;
+			height: 80px;
+			margin-bottom: 20px;
+		}
+
+		.tariff--gold & {
+			background-image: linear-gradient(to bottom, #F5CE5B 0%, rgba(#FBEE88, 0) 100%);
+			color: #E2B735;
+		}
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+
+		@include desktop-xl {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 4px;
+		font-size: 20px;
+		line-height: 1.2;
+		font-weight: 600;
+
+		@include tablet {
+			margin-bottom: 8px;
+			font-size: 24px;
+		}
+
+		@include desktop-xl {
+			font-size: 32px;
+		}
+	}
+
+	&__description {
+		font-size: 14px;
+		line-height: 1.4;
+		color: #8F959B;
+
+		@include desktop {
+			min-height: 40px;
+		}
+
+		@include desktop-xl {
+			min-height: unset;
+			font-size: 16px;
+		}
+	}
+
+	&__action-box {
+		margin-bottom: 18px;
+
+		@include tablet-only {
+			margin-bottom: 0;
+			grid-area: action;
+		}
+
+		@include desktop {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__price-box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 4px;
+		padding: 20px 16px 16px;
+		background-color: #F3F7FB;
+		border-radius: 16px;
+		text-align: center;
+
+		@include tablet {
+			margin-bottom: 8px;
+			padding: 16px;
+			border-radius: 20px;
+		}
+
+		@include tablet-only {
+			min-height: 293px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@include desktop {
+			padding: 24px 16px 16px;
+		}
+
+		@include desktop-xl {
+			padding: 32px 24px 24px;
+			border-radius: 16px;
+		}
+
+		.tariff--gold & {
+			background-image: url("../images/price-box-bg.svg"), linear-gradient(180deg, #E0B330 0%, #FBEE88 51.1%, #E0B330 100%);
+			background-color: unset;
+			background-size: 120% auto, 100% 100%;
+			background-position: 86% 70%, center center;
+			background-repeat: no-repeat;
+
+			@include desktop {
+				background-size: 140% auto, 100% 100%;
+				background-position: 50% 51%, center center;
+			}
+
+			@include desktop-xl {
+				background-size: 120% auto, 100% 100%;
+				background-position: 86% 70%, center center;
+			}
+		}
+	}
+
+	&__price {
+		margin-bottom: 4px;
+		font-size: 24px;
+		line-height: 1.2;
+		font-weight: 700;
+
+		@include tablet {
+			font-size: 32px;
+			font-weight: 600;
+		}
+
+		@include tablet-only {
+			margin-top: auto;
+		}
+
+		@include desktop {
+			margin-bottom: 8px;
+			font-size: 32px;
+			font-weight: 700;
+		}
+
+		@include desktop-xl {
+			font-size: 40px;
+		}
+
+		.tariff--gold & {
+			color: $color-white;
+		}
+	}
+
+	&__period {
+		margin-bottom: 16px;
+		font-size: 14px;
+		line-height: 1.4;
+
+		@include tablet {
+			margin-bottom: 24px;
+		}
+
+		@include tablet-only {
+			margin-bottom: auto;
+		}
+
+		@include desktop-xl {
+			font-size: 16px;
+			line-height: 1;
+		}
+
+		.tariff--gold & {
+			color: $color-white;
+		}
+	}
+
+	&__action-btn {
+		width: 100%;
+	}
+
+	&__list-box {
+		@include tablet-only {
+			grid-area: list;
+			padding-bottom: 6px;
+		}
+
+		@include desktop {
+			padding: 0 12px 8px;
+		}
+
+		@include desktop-xl {
+			padding: 0 20px;
+		}
+	}
+
+	&__tooltip {
+		position: relative;
+	}
+
+	&__label {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -100%);
+		padding: 6px 10px;
+		background: linear-gradient(180deg, #FFF289 0%, #D2A41D 100%);
+		border-radius: 12px 12px 0 0;
+		font-size: 12px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: $color-white;
+
+		@include tablet {
+			padding: 6px 12px;
+			border-radius: 16px 16px 0 0;
+			font-size: 14px;
+			line-height: 1.4;
+		}
+
+		@include tablet-only {
+			left: 24px;
+			transform: translate(0, -100%);
+		}
+	}
+
+	&__timer {
+		position: absolute;
+		top: -10px;
+		left: -8px;
+
+		@include tablet {
+			top: -16px;
+			left: 3px;
+		}
+
+		@include tablet-only {
+			display: none;
+		}
+
+		@include desktop {
+			top: -8px;
+			left: 3px;
+		}
+
+		@include desktop-xl {
+			top: -16px;
+		}
+
+		&--tablet {
+			display: none;
+
+			@include tablet-only {
+				display: inline-flex;
+				top: 16px;
+				left: 16px;
+			}
+		}
+	}
+}

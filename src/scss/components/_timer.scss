@@ -1,0 +1,37 @@
+.timer {
+	display: inline-flex;
+	align-items: center;
+	padding: 4px 8px 4px 5px;
+	border-radius: 40px;
+	background-color: #FFE1E0;
+	color: #F24C41;
+
+	@include tablet {
+		padding: 6px 12px 6px 8px;
+	}
+
+	&__icon {
+		width: 11px;
+		height: 11px;
+		margin-right: 3px;
+
+		@include tablet {
+			width: 16px;
+			height: 16px;
+			margin-right: 4px;
+		}
+	}
+
+	&__time {
+		font-size: 12px;
+		line-height: 1.2;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+
+		@include tablet {
+			font-size: 14px;
+			line-height: 1.4;
+			font-weight: 600;
+		}
+	}
+}
